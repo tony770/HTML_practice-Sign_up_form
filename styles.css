@@ -165,3 +165,29 @@ input:focus:hover {
     color: rgb(232, 187, 98);
     font-size: 18px;
 }
+
+input + span {
+    position: relative;
+}
+
+#pass:invalid,
+#confirmPass:invalid {
+    border: 2px solid red;
+}
+
+#pass:required + .passCheck::after {
+    font-size: 1.1rem;
+    position: absolute;
+    content: "* required";
+}
+
+#confirmPass:required + .confirmPassCheck::after {
+    font-size: 1.1rem;
+    position: absolute;
+    content: "* Password must match";
+}
+
+#pass:valid + .passCheck::after,
+#confirmPass:valid + .confirmPassCheck::after {
+    content: "";
+}
